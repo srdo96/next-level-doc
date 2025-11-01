@@ -31,7 +31,7 @@ const config = {
   projectName: "next-level-doc", // Usually your repo name.
 
   onBrokenLinks: "throw",
-  deploymentBranch: "main",
+  deploymentBranch: "gh-pages",
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
