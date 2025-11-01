@@ -5,8 +5,10 @@ Welcome to the **Full-Stack Bootcamp Notes**! This project serves as a comprehen
 - **TypeScript**
 - **Node.js**
 - **Express**
+- **Mongoose**
 - **Golang**
 - **Next.js**
+- **Redux**
 - **PostgreSQL**
 - **Prisma**
 - **Docker**
