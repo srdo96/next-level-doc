@@ -4,6 +4,7 @@ node_modules/
 .pnp.js
 
 # Build output
+build/
 dist/
 .cache/
 .docusaurus/
