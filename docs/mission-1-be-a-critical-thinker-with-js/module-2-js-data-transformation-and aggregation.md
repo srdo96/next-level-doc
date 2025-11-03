@@ -230,3 +230,36 @@ Use `Infinity` to flatten any level of nested arrays:
 const deeplyNested = [1, [2, [3, [4]]]];
 console.log(deeplyNested.flat(Infinity)); // [1, 2, 3, 4]
 ```
+
+## 2-4 Array cross matching and Array.from() explained
+
+#### `Some()`
+
+It check whether at least one element in an array satisfies a condition which is given in a callback function. It return `boolean` value
+
+```js
+const num = [1, 2, 3, 4, 5];
+const hasEvenNumber = num.some((n) => n % 2 === 0);
+console.log(hasEvenNumber); // true
+```
+
+```js title="role checking"
+const currentUserRole = ["user", "manager"];
+const accessRoles = ["admin", "manager"];
+const canAccess = currentUserRole.some((role) => accessRoles.includes(role));
+console.log(canAccess); // false
+```
+
+:::note
+It stop running it finds first truthy result.
+:::
+
+### `Array.from()`
+
+```js title="Python Like Range function"
+const range = (start, end, step = 1) =>
+  Array.from(
+    { length: Math.ceil((end - start) / step) },
+    (_, i) => start + i * step
+  );
+```

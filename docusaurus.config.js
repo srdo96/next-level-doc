@@ -102,17 +102,7 @@ const config = {
       },
       footer: {
         style: "dark",
-        links: [
-          {
-            title: "Docs",
-            items: [
-              {
-                label: "Docs",
-                to: "/docs/mission-1-be-a-critical-thinker-with-js/module-1-mindset-over-syntax",
-              },
-            ],
-          },
-        ],
+
         copyright: `Copyright © ${new Date().getFullYear()} Next Level Doc. Built with ❤️`,
       },
       prism: {
