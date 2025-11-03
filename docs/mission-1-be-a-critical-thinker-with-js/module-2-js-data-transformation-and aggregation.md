@@ -156,3 +156,77 @@ const allEntries = [...pHero.entries()];
 console.log(allEntries);
 // Output: [ [ { name: "MERN" }, { id: "level 1" } ], [ { name: "Go" }, { id: "level 2" } ] ]
 ```
+
+## 2-3 Sorting And Flattening Array Explained
+
+### Sorting Arrays in JavaScript with `sort()`
+
+#### Basic usage:
+
+when call `array.sort()`, it converts elements to strings and sorts them
+
+```js
+const fruits = ["banana", "apple", "cherry"];
+console.log(fruits.sort()); // ["apple", "banana", "cherry"]
+
+const scores = [40, 100, 1, 5, 25, 10];
+console.log(scores.sort()); // [ 1, 10, 100, 25, 40, 5 ]
+```
+
+#### Sorting numbers:
+
+- If the compare function returns a negative number, a comes before b.
+- If it returns a positive number, a comes after b.
+- If it returns zero, their order stays the same.
+
+```js title="ascending"
+const numbers = [12, 5, 21, 2];
+numbers.sort((a, b) => a - b);
+console.log(numbers); // [2, 5, 12, 21]
+```
+
+```js title="descending"
+const numbers = [12, 5, 21, 2];
+numbers.sort((a, b) => b - a);
+console.log(numbers); // [21, 12, 5, 2]
+```
+
+#### Case sensitive String
+
+```js
+const fruits = ["Banana", "apple", "Cherry", "date"];
+fruits.sort((a, b) => a.localeCompare(b));
+console.log(fruits);
+// Output: [ 'apple', 'banana', 'Cherry', "date" ]
+```
+
+### Using the `flat()` Method to Flatten Arrays
+
+The `flat()` method in JavaScript creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+
+#### Basic Syntax
+
+```js
+const arr = [1, 2, [3, 4]];
+const flatArr = arr.flat();
+console.log(flatArr); // [1, 2, 3, 4]
+```
+
+#### Flattening Nested Arrays to a Certain Depth
+
+It make all nested array into a single array
+
+```js
+const arr = [1, 2, [3, 4, [5, 6]]];
+console.log(arr.flat(1)); // [1, 2, 3, 4, [5, 6]]
+console.log(arr.flat(2)); // [1, 2, 3, 4, 5, 6]
+```
+
+#### Flattening All Levels (Infinite Depth)
+
+Use `Infinity` to flatten any level of nested arrays:
+
+```js
+const deeplyNested = [1, [2, [3, [4]]]];
+console.log(deeplyNested.flat(Infinity)); // [1, 2, 3, 4]
+```
