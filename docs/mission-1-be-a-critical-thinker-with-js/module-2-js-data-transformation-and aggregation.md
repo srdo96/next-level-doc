@@ -264,7 +264,7 @@ const range = (start, end, step = 1) =>
   );
 ```
 
-## From Simple Totals to Powerful Aggregation (reduce)
+## 2-5 From Simple Totals to Powerful Aggregation (reduce)
 
 ```js markdown
 // Sample cart items data
@@ -293,4 +293,72 @@ players.reduce((acc, player) => {
   }
   return acc;
 }, players[0]);
+```
+
+## 2-10 Binning (Resampling) Time Series Data
+
+```js
+const timestamp_ms = new Date("2025-10-22T10:01:00Z").getTime();
+// 1761127260000
+// it return number of milliseconds since the Unix epoch
+```
+
+We need to binning in 30 min interval, so bin size in millisecond:
+
+```js
+const bin_size_ms = 30 * 60 * 1000;
+```
+
+Since Epoch Time to the given timestamp, how many 30-min intervals happen, we can call it bin_index
+
+```js
+const bin_index_ms = Math.floor(ms / bin_size_ms);
+// we remove fractional values. this values are like some extra minutes not proper 30 min
+```
+
+Now if we multiply `bin_index * bin_size_ms` we will get `ms` except some extra min. and if we convert this ms to `ISOString` we will get out object `key`
+
+```js
+const current_bin_ms = bin_index_ms * bin_size_ms;
+const bin_iso_time = new Date(bin).toISOString();
+```
+
+```js title="Solution"
+const events = [
+  { timestamp: "2025-10-22T10:01:00Z", type: "click" },
+  { timestamp: "2025-10-22T10:05:00Z", type: "scroll" },
+  { timestamp: "2025-10-22T10:14:00Z", type: "click" },
+  { timestamp: "2025-10-22T10:31:00Z", type: "click" },
+  { timestamp: "2025-10-22T10:45:00Z", type: "scroll" },
+  { timestamp: "2025-10-22T11:02:00Z", type: "click" },
+];
+
+const bin_size = 30 * 60 * 1000;
+
+const binnedEvents = events.reduce((table, e) => {
+  const timestamp_ms = new Date(e.timestamp).getTime();
+  const bin_index_ms = Math.floor(timestamp_ms / bin_size);
+  const current_bin_ms = bin_size * bin_index_ms;
+  const bin_iso_time = new Date(current_bin_ms).toISOString();
+  const next_bin_ms = current_bin_ms + bin_size_ms;
+
+  if (!(timestamp_ms >= current_bin_ms && timestamp_ms < next_bin_ms)) {
+    return table;
+  }
+
+  if (!table[bin_iso_time]) {
+    table[bin_iso_time] = { total: 0 };
+  }
+  table[bin_iso_time].total += 1;
+  return table;
+}, {});
+
+console.log(binnedEvents);
+
+// Output:
+// {
+//   '2025-10-22T10:00:00.000Z': { total: 3 },
+//   '2025-10-22T10:30:00.000Z': { total: 2 },
+//   '2025-10-22T11:00:00.000Z': { total: 1 }
+// }
 ```
