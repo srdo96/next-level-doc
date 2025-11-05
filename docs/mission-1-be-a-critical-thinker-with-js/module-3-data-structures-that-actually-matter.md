@@ -103,7 +103,7 @@ counter1.add(3); // 5
 
 ### Stack
 
-**Stack** is a data stricture that follow Last In First Out (LIFO) principle.
+**Stack** is a data stricture that follow Last In First Out **(LIFO)** principle.
 
 It store data one top of another. it has three methods
 
@@ -139,7 +139,7 @@ class Stack {
   isEmpty() {
     return this.items.length === 0;
   }
-  // O(n)
+  // O(n + n + n) -> O(3n) -> O(n)
   print() {
     console.log(this.items.slice().reverse().join(" -> "));
   }
@@ -149,4 +149,45 @@ stack.push(10); // add 10
 stack.push(20); // add 20
 stack.pop(); // last element 20 remove
 stack.peek(); // 10
+```
+
+## 3-4 Queue Implementation using Array
+
+### Queue
+
+**Queue** is a data structure that follow First In First Out **(FIFO)** principle. It has two methods:
+
+- **enqueue**: Insert a element in a queue.
+- **dequeue**: Remove the first element of a queue
+- **front/peek**: View the front (or first) element of a queue.
+
+```js title=Queue Array Implementation
+class Queue {
+  constructor() {
+    this.items = [];
+  }
+  //O(1)
+  enqueue(element) {
+    this.items.push(element);
+  }
+  O(n)
+  dequeue() {
+    if (isEmpty()){
+      return undefined
+    }
+    return this.items.shift();
+  }
+  // O(1)
+  front() {
+    if(isEmpty()){
+      return undefined
+    }
+    return this.items[0];
+  }
+  // O(1)
+  isEmpty(){
+    return this.items.length === 0
+  }
+}
+const queue = new Queue()
 ```
