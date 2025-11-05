@@ -226,3 +226,59 @@ while (temp !== null) {
   temp = temp.next;
 }
 ```
+
+## 3-7 Linked List Implementation - append() and print()
+
+```js showLineNumbers {16-28,36-45}
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class Linkedlist {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = null;
+  }
+
+  // add vlue at the end of the list like push
+  append(value) {
+    const newNode = new Node(value);
+    // if Linkedlist is empty
+    if (this.head === null) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      // if Linkedlist is not empty
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+    this.length++;
+  }
+
+  prepend() {}
+
+  insert() {}
+
+  remove() {}
+
+  print() {
+    let currentNode = this.head;
+    const arr = [];
+
+    while (currentNode !== null) {
+      arr.push(currentNode.value);
+      currentNode = currentNode.next;
+    }
+    console.log(arr.join(" -> "), "-> null ");
+  }
+}
+
+const list = new Linkedlist();
+list.append(5);
+list.append(6);
+list.print();
+```
