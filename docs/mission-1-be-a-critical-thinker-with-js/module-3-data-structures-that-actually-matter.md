@@ -414,3 +414,83 @@ roll.print();
 roll.remove(0);
 roll.print();
 ```
+
+## 3-10 Queue Implementation with Linked List
+
+```js
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.next = null;
+    }
+}
+
+class Queue {
+    constructor() {
+        this.head = null;
+        this.tail = null;
+        this.size = 0;
+    }
+
+    // O(1)
+    enqueue(value) {
+        const newNode = new Node(value);
+
+        // if Linked List is empty
+        if (!this.head) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            // if Linked List is not empty
+            this.tail.next = newNode;
+            this.tail = newNode;
+        }
+        return ++this.size;
+    }
+
+    //  remove the first element from the queue
+    //  O(1)
+    dequeue() {
+        if (isEmpty()) {
+            return undefined;
+        }
+        const value = this.head.value;
+        this.head = this.head.next;
+        this.size--;
+
+        if (!this.head) this.tail = null;
+        return value;
+    }
+    // O(1)
+    front() {
+        return this.head ? this.head.value : undefined;
+    }
+
+    // O(1)
+    length() {
+        return this.size;
+    }
+
+    // O(1)
+    isEmpty() {
+        return this.head === null;
+    }
+    // O(n)
+    print() {
+        let result = "";
+        let currentNode = this.head;
+
+        while (currentNode) {
+            result += currentNode.value + " -> ";
+            currentNode = currentNode.next;
+        }
+        result += "null";
+        console.log(result);
+    }
+}
+
+const line = new Queue();
+line.enqueue(4);
+line.enqueue(5);
+line.print();
+```
