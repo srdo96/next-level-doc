@@ -644,7 +644,7 @@ export default function Home() {
                 GitHub
               </a>
               <a
-                href="www.linkedin.com/in/sakib5/"
+                href="https://linkedin.com/in/sakib5/"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
