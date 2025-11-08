@@ -107,8 +107,33 @@ End Algorithm
 
 ```
 
+Time Complexity: O(n^2)
+
 # 4-10 Insertion sort implementation
 
 ```js title="PSEUDO Code of Insertion Sort" showLineNumbers
+Algorithm InsertionSort(arr)
+    n ← length(arr)
+
+    for i ← 1 to n - 1 do
+        key ← arr[i]
+        j ← i - 1
+
+        // Move elements greater than key one position ahead
+        while j ≥ 0 and arr[j] > key do
+            arr[j + 1] ← arr[j]
+            j ← j - 1
+        end while
+
+        arr[j + 1] ← key
+    end for
+
+    return arr
+End Algorithm
+
 
 ```
+
+Time Complexity: O(n^2)
+
+# 4-11 Closing remarks
