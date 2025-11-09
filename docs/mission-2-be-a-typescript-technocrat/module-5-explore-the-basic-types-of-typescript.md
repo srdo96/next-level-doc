@@ -111,6 +111,6 @@ You can also specify more complex types and lengths:
 let point: [number, number, number] = [1, 4, 9];
 let personInfo: [string, number?, boolean?]; // Optional tuple elements
 
-personInfo = [""];
-personInfo = ["Bob", 28, true];
+personInfo = ["Jamal"];
+personInfo = ["Jakir", 28, true];
 ```
