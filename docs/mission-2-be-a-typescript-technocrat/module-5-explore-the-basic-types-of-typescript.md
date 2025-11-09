@@ -86,3 +86,31 @@ someValue = { message: "Now it's an object" };
 :::info
 By using Typescript we can detect Bug in Development phase rather at Runtime
 :::
+
+# 5-5 Explore Non Primitive Types
+
+**Non Primitive Data Type:**
+
+-   Js and Ts: `array`, `object`
+-   TS Only: `tuple`
+
+**Tuple Example in TypeScript**
+
+A tuple is a special array type with fixed length and known types for each element.
+
+```ts showLineNumbers
+// A tuple with a string and a number
+let user: [string, number];
+
+user = ["Hasan", 30];
+```
+
+You can also specify more complex types and lengths:
+
+```ts showLineNumbers
+let point: [number, number, number] = [1, 4, 9];
+let personInfo: [string, number?, boolean?]; // Optional tuple elements
+
+personInfo = [""];
+personInfo = ["Bob", 28, true];
+```
