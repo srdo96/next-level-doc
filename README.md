@@ -16,7 +16,7 @@ To get a local copy up and running, follow these steps:
 
    ```sh
    git clone https://github.com/srdo96/next-level-doc.git
-   cd fullstack-bootcamp-notes
+   cd next-level-doc
    ```
 
 2. **Install dependencies:**
