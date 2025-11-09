@@ -309,7 +309,7 @@ export default function Home() {
               }}
             >
               <a
-                href="/next-level-doc//docs/mission-1-be-a-critical-thinker-with-js/module-1-mindset-over-syntax"
+                href="/next-level-doc/docs/mission-1-be-a-critical-thinker-with-js/module-1-mindset-over-syntax"
                 className="glow-effect"
                 style={{
                   display: "inline-flex",
@@ -644,7 +644,7 @@ export default function Home() {
                 GitHub
               </a>
               <a
-                href="www.linkedin.com/in/sakib5/"
+                href="https://linkedin.com/in/sakib5/"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

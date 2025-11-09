@@ -19,6 +19,11 @@ const config = {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
+  markdown: {
+    mermaid: true,
+  },
+  themes: ["@docusaurus/theme-mermaid"],
+
   // Set the production url of your site here
   url: "https://srdo96.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
@@ -102,17 +107,7 @@ const config = {
       },
       footer: {
         style: "dark",
-        links: [
-          {
-            title: "Docs",
-            items: [
-              {
-                label: "Docs",
-                to: "/docs/mission-1-be-a-critical-thinker-with-js/module-1-mindset-over-syntax",
-              },
-            ],
-          },
-        ],
+
         copyright: `Copyright © ${new Date().getFullYear()} Next Level Doc. Built with ❤️`,
       },
       prism: {
