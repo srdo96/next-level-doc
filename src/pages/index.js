@@ -78,6 +78,12 @@ const technologies = [
 
 const contributors = [
     {
+        name: "Sakib Rahman",
+        username: "srdo96",
+        githubUrl: "https://github.com/srdo96",
+        avatarUrl: "https://github.com/srdo96.png",
+    }, 
+    {
         name: "Sadnan Zaman Tandith",
         username: "Tandith0005",
         githubUrl: "https://github.com/Tandith0005",
