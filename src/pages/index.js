@@ -54,7 +54,7 @@ const technologies = [
         name: "Prisma",
         description: "Type-safe database access",
         icon: "🟦",
-        logo: "https://raw.githubusercontent.com/prisma/prisma-assets/main/Logo/prisma-logo.svg",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg",
         gradientStart: "#374151",
         gradientEnd: "#111827",
     },
@@ -82,7 +82,7 @@ const contributors = [
         username: "srdo96",
         githubUrl: "https://github.com/srdo96",
         avatarUrl: "https://github.com/srdo96.png",
-    }, 
+    },
     {
         name: "Sadnan Zaman Tandith",
         username: "Tandith0005",
@@ -143,8 +143,8 @@ export default function Home() {
 
     return (
         <Layout
-            title="Full-Stack Bootcamp Notes"
-            description="6-Month Journey Learning TypeScript, Node.js, Express, Golang, Next.js, PostgreSQL, Prisma, Docker & Nginx"
+            title="Next Level Doc"
+            description="Notes and resources for mastering full-stack development, covering key concepts and tools from front-end to back-end."
             noFooter
         >
             <style>{`
@@ -292,7 +292,7 @@ export default function Home() {
                             }}
                         >
                             <span className="gradient-text">
-                                Next Level Bootcamp Notes
+                                Next Level Doc
                             </span>
                         </h1>
 
@@ -304,21 +304,8 @@ export default function Home() {
                                 fontWeight: 500,
                             }}
                         >
-                            6-Month Journey Learning TypeScript, Node.js,
-                            Express, Golang, Next.js, PostgreSQL, Prisma, Docker
-                            & Nginx.
-                        </p>
-
-                        <p
-                            style={{
-                                fontSize: "1.1rem",
-                                color: isDark ? "#94a3b8" : "#64748b",
-                                fontStyle: "italic",
-                                marginBottom: "3rem",
-                            }}
-                        >
-                            Learning, Building, and Documenting — One Stack at a
-                            Time.
+                            Full-stack mastery: key concepts and essential
+                            tools.
                         </p>
 
                         {/* CTA Buttons */}
@@ -371,7 +358,7 @@ export default function Home() {
                                     }`;
                                 }}
                             >
-                                📘 Start Reading
+                                📘 Start Exploring
                             </a>
                         </div>
                     </header>
