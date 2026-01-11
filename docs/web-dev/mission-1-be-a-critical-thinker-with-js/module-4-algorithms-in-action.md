@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 ## 4-1 Basic cache implementation with Map
 
-![Cache](../../static/img/cache.png)
+![Cache](/img/cache.png)
 
 ```js title="Cache Simulation"
 const dataCache = new Map();

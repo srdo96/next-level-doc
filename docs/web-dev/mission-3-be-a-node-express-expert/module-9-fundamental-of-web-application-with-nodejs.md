@@ -10,7 +10,7 @@ Client(web browser) থেকে ইন্টারনেট দিয়ে Server
 
 ### Url Parts
 
-![URL Parts](../../static/img/url-parts.png)
+![URL Parts](/img/url-parts.png)
 
 # 9-3 How the web evolved
 

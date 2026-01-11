@@ -94,9 +94,9 @@ const config = {
                 items: [
                     {
                         type: "docSidebar",
-                        sidebarId: "tutorialSidebar",
+                        sidebarId: "webDevSidebar",
                         position: "left",
-                        label: "Docs",
+                        label: "Web Dev",
                     },
                     // {
                     //     type: "docSidebar",
@@ -104,12 +104,12 @@ const config = {
                     //     position: "left",
                     //     label: "AI Notes",
                     // },
-                    // {
-                    //     type: "docSidebar",
-                    //     sidebarId: "resourcesSidebar",
-                    //     position: "left",
-                    //     label: "Resources",
-                    // },
+                    {
+                        type: "docSidebar",
+                        sidebarId: "resourcesSidebar",
+                        position: "left",
+                        label: "Resources",
+                    },
                     {
                         href: "https://github.com/srdo96/next-level-doc",
                         label: "GitHub",

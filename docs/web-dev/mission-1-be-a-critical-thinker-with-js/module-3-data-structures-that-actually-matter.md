@@ -202,11 +202,11 @@ In linked list, it is a list of nodes and each nodes can contain value and can c
 
 -   **Node**: combined of data and next (pointer address of next node)
 
-![Linked List](../../static/img/linkedlist.png)
+![Linked List](/img/linkedlist.png)
 
 ## 3-6 Linked List Implementation - Basic concept of Node
 
-![Type of Linked List](../../static/img/type_linkedlist.png)
+![Type of Linked List](/img/type_linkedlist.png)
 
 ```js title="Basic Linked list" showLineNumbers
 class Node {
