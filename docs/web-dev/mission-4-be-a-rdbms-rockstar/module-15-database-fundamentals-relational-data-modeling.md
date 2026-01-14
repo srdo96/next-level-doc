@@ -81,3 +81,64 @@ When an attribute value -
 -   Don't exists
 -   Existence Unknown
 -   Exists but missing
+
+### Relationship
+
+-   Describes purpose connection between entities
+-   Represented with a Diamond in ER Diagram
+
+![Relationship](/img/relationship.png)
+
+### Relationship - Degree of Relationship
+
+-   Unary: Linked to the Entity Type. e.g. Employee supervises Employee
+-   Binary: Association among two entities. e.g. Publisher publishes Book
+-   Ternary: Primary key that was build with multiple attributes. e.g. Teacher teaches Subject to Student
+
+![Degree of Relationship](/img/degree-of-relationship.png)
+
+### Relationship - Cardinality Ratio
+
+One To One, One To Many, Many To Many
+
+![Cardinality Ratio](/img/cardinality-ratio.png)
+
+### Relationship - Cardinality Ratio (Crows Foot)
+
+![Cardinality Ratio (Crows Foot)](/img/cardinality-ratio-crows-foot.png)
+
+### Relationship - Participation Constraints
+
+Do All entities participate in the relationship?
+
+-   Total Participation: All entities must participate in the relationship.
+-   Partial Participation: Some entities may not participate in the relationship.
+
+![Participation Constraints](/img/participation-constraints.png)
+
+### Relationship - Associative/Intersection Entity
+
+-   Generally occurs in Many to Many and Ternary relationships
+-   Can have unique identifier and other attributes
+-   Can have independent meaning
+
+![Associative/Intersection Entity](/img/associative-intersection-entity.png)
+
+### Relationship - Generalization/Specialization
+
+-   Generalization: An entity type that represents a general concept at a higher level.(Superclass)
+-   Specialization: An entity type that represents a specific concept at a lower level.(Subclass)
+
+![Generalization/Specialization](/img/generalization-specialization.png)
+
+### Relationship - Disjoint/Overlapping
+
+-   Disjoint: An entity occurrence can be a member of only one subclass.(OR)
+-   Overlapping: An entity occurrence can be a member of more then one of the subclasses.(AND)
+
+![Disjoint/Overlapping](/img/disjoint-overlapping.png)
+
+### Diagram Notations
+
+![Diagram Notations](/img/diagram-notations1.png)
+![Diagram Notations](/img/diagram-notations2.png)
