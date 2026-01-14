@@ -4,7 +4,7 @@
 
 ## 15-1: Anatomy of a Database
 
-### Entity
+## Entity
 
 -   A thing or object that have independent existence.
 -   Can have physical existence or conceptual existence only.
@@ -28,7 +28,7 @@ Example: Student, Course, Enrollment, etc.
 **Example:** Enrollment, etc.
 ![Weak Entity](/img/weak_entity.png)
 
-### Attributes
+## Attributes
 
 -   Properties that describe an entity.
 -   These information or properties are required to operate the Target System.
@@ -82,7 +82,7 @@ When an attribute value -
 -   Existence Unknown
 -   Exists but missing
 
-### Relationship
+## Relationship
 
 -   Describes purpose connection between entities
 -   Represented with a Diamond in ER Diagram
@@ -138,7 +138,42 @@ Do All entities participate in the relationship?
 
 ![Disjoint/Overlapping](/img/disjoint-overlapping.png)
 
-### Diagram Notations
+### Relationship - One To One Relationship
+
+![Dedicated and Shared](/img/dedicated-shared.png)
+
+There are two types of one to one relationship. Dedicated and Shared.
+
+-   **Dedicated**: Dedicated for a Entity and not multi-valued. It may looks like an Entity but It is a composite attribute. Ex. ID Card
+    ![Dedicated](/img/dedicated.png)
+-   **Shared**: Its not dedicated and also it can one to many for other relation. When design schema we will check which side of relation's entity has total participation. Then we will keep other side of Partial participation's entity's id as foreign key in Total participation's entity.
+
+    ![Shared](/img/shared.png)
+
+### Relationship - One To Many Relationship
+
+For this relationship, we will keep the foreign key in the many side of the relationship. And if its' relationship has any attributes it will goes to many side of the relationship's table.
+
+![One To Many](/img/one-to-many.png)
+
+### Relationship - Many To Many Relationship
+
+If the relationship has associative entity, we will create a join table for that. And keep the foreign keys of the other two entities in the join table. And make primary key of the join table from the foreign keys. which is called composite key.And all the attributes of the associative entity will go to the join table.
+
+![Many To Many](/img/many-to-many.png)
+
+## Diagram Notations
 
 ![Diagram Notations](/img/diagram-notations1.png)
 ![Diagram Notations](/img/diagram-notations2.png)
+
+## How RDBMS Represents Data
+
+-   **Table**: A collection of data elements organized in terms of rows and columns.
+-   **Row**: A single entry in a table (AKA: Tuple, Record)
+-   **Attribute**: A distinct piece of information in a record (AKA: Field, Column)
+-   **Column**: A list of values belonging to a particular field.
+-   **Degree of a Table**: Number of columns in a table.
+-   **Cardinality of a Table**: Number of rows in a table.
+
+![RDBMS Representations](/img/rdms-representations.png)
