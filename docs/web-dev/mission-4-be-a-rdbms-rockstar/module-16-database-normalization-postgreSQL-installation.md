@@ -198,3 +198,62 @@ local  all  all md5
 # Restart PostgreSQL
 sudo systemctl restart postgresql
 ```
+
+### Some PostgreSQL Commands
+
+1. Connection Info
+
+```
+\conninfo
+```
+
+2. List all databases
+
+```
+\l
+```
+
+3. List all tables
+
+```
+\dt
+```
+
+4. List all users
+
+```
+\du
+```
+
+5. Show all commands
+
+```
+\?
+```
+
+6. Create a table
+
+```sql
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(55) NOT NULL
+);
+```
+
+7. Show tables data
+
+```sql
+SELECT * FROM users;
+```
+
+8. Switch to another database
+
+```
+\c mydb
+```
+
+9. Connect to a PostgreSQL database as user "myuser" and database "mydb"
+
+```bash
+psql -U myuser -d mydb
+```
