@@ -142,3 +142,59 @@ Here, the primary key is the combination of (StudentID, Course).
 | ------ | ---------- | --------------- |
 | DBMS   | Mr. Sami   | sami@gmail.com  |
 | OOP    | Mrs. Laila | laila@gmail.com |
+
+## PostgreSQL Installation For Linux Arch
+
+```bash title="PostgreSQL Install"
+sudo pacman -S postgresql
+```
+
+2. Initialize the database cluster
+
+```bash
+sudo -iu postgres
+initdb --locale=en_US.UTF-8 -D /var/lib/postgres/data
+exit
+```
+
+3. Start and enable the database server
+
+```bash
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
+```
+
+4. Access PostgreSQL CLI
+
+```bash
+sudo -iu postgres
+psql
+\q # Exit psql
+```
+
+5. Create a new database & user
+
+```bash
+CREATE USER myuser WITH PASSWORD 'mypassword';
+CREATE DATABASE mydb OWNER myuser;
+GRANT ALL PRIVILEGES ON DATABASE mydb TO myuser;
+```
+
+6. Connect as your user
+
+```bash
+psql -U myuser -d mydb
+```
+
+7. Authentication config (if get authentication error)
+
+```bash
+sudo nvim /var/lib/postgres/data/pg_hba.conf
+# Change this
+local  all  all peer
+# To this
+local  all  all md5
+
+# Restart PostgreSQL
+sudo systemctl restart postgresql
+```
