@@ -269,3 +269,4 @@ select max(age) from students;
 select min(age) from students;
 ```
 
+
