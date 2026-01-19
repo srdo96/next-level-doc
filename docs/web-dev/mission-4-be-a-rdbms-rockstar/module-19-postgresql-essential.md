@@ -79,12 +79,12 @@ select country, count(*) from students group by country having count(*) > 4;
 
 ```sql
 create table courses (
-    id serial primary key,
+    id integer primary key generated always as identity,
     name varchar(100) not null
 );
 
 create table students (
-    id serial primary key,
+    id integer primary key generated always as identity,
     name varchar(100) not null,
     course_id int not null references courses(id)
 );

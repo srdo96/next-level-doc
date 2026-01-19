@@ -66,7 +66,17 @@ The `boolean` type in PostgreSQL can take the values `true`, `false`, or `null` 
 | `SERIAL`                      | 4 bytes      | 1 to 2,147,483,647                 | Auto-incrementing IDs (legacy) | ❌ Legacy, avoid in new schemas             |
 | `IDENTITY`                    | 4 or 8 bytes | Follows INT / BIGINT               | Auto-incrementing IDs (modern) | ✅ Use instead of SERIAL for new schemas    |
 
-> `SERIAL` is a legacy type and should be avoided in new schemas. Use `IDENTITY` instead.
+> `SERIAL` is a legacy type and should be avoided in new schemas. Use `IDENTITY` instead. 
+
+```sql 
+create table products (
+  product_id integer generated always as identity primary key,  
+);
+```
+
+
+
+
 
 ### Character Data Types
 
@@ -124,7 +134,7 @@ drop table if exists students;
 
 ```sql
 CREATE TABLE students (
-    student_id SERIAL PRIMARY KEY,
+    student_id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     name VARCHAR(50) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     age INT CHECK (age >= 18), -- Check Constraints
